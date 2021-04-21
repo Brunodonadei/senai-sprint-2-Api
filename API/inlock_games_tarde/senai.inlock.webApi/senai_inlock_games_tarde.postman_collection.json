@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "7b2561fd-f319-4b5f-af92-a6b4590bc35a",
+		"name": "senai_inlock_games_tarde",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jogos",
+			"item": [
+				{
+					"name": "Jogos.ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						},
+						"description": "essa requisição irá mostrar todos os jogos, assim como seu id, nome, descrição, valor e etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.CadastrarJogos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTYxODg5NDkxMSwiaXNzIjoiSW5sb2NrLndlYkFwaSIsImF1ZCI6IklubG9jay53ZWJBcGkifQ.A4TAlorCPg8zyhWb6da07JCpkY8FnNgDJhy12NTkM4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nomeJogo\": \"World of Warcraft\",\r\n        \"descricao\": \"World of Warcraft é um jogo on-line do gênero MMORPG, o jogo se passa no mundo fantástico de Azeroth.\",\r\n        \"dataLancamento\": \"2004-11-23T00:00:00\",\r\n        \"valor\": 75.90,\r\n        \"idEstudio\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.DeletarPorId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.ListarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Usuario.BuscarPorEmailSenha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"cliente@cliente.com\",\r\n    \"senha\" : \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/usuario/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuario",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estudios",
+			"item": [
+				{
+					"name": "Estudio.ListarEstudio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/estudio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

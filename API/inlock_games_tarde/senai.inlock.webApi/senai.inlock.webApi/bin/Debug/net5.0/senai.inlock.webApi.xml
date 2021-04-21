@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inlock.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.Get">
+            <summary>
+            Requisição para mostrar todos os jogos (pode ser requisitado por usuários comuns e administradores)
+            </summary>
+            <returns>Todos os jogos cadastrados</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.Post(senai.inlock.webApi.Domains.JogosDomain)">
+            <summary>
+            Requisição para cadastrar um jogo (pode ser feito somente por administradores)
+            </summary>
+            <param name="novoJogo">Objeto novo que será cadastrado</param>
+            <returns>StatusCode 201 (Created), dizendo que foi criado</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.BuscarPorId(System.Int32)">
+            <summary>
+            Requisição para buscar um jogo pelo seu id (pode ser requisitado por usuários comuns e administradores)
+            </summary>
+            <param name="id">id do jogo que será buscado</param>
+            <returns>Um jogo procurado, se não achar, retorna nulo</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.Deletar(System.Int32)">
+            <summary>
+            Requisição para excluir um jogo pelo seu id (pode ser feito somente por administradores)
+            </summary>
+            <param name="id">id do jogo que será deletado</param>
+            <returns>Retorna um status code 204(NoContent) ou seja, foi excluido, não possui conteúdo</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.UsuarioController.Login(senai.inlock.webApi.Domains.UsuarioDomain)">
+            <summary>
+            Uma requisição para fazer login ou em um usuário comum, ou em administrador
+            </summary>
+            <param name="login">email e senha do usuario</param>
+            <returns>Um token jwt para garantir permissões específicas para algum usuário.</returns>
+        </member>
+    </members>
+</doc>

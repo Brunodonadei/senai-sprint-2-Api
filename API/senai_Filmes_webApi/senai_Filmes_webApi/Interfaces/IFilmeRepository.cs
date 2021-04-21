@@ -47,7 +47,7 @@ namespace senai_Filmes_webApi.Interfaces
         /// Deleta um filme existente
         /// </summary>
         /// <param name="id">id do filme que será deletado</param>
-        void Delete(int id)
+        void Delete(int id);
         
 
     }
