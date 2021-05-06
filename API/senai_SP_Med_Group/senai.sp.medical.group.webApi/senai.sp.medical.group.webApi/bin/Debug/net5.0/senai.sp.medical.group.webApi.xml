@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.sp.medical.group.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.sp.medical.group.webApi.Interfaces.IConsultaRepository.ListarMinhas(System.Int32)">
+            <summary>
+            Lista todas as consultas de um determinado paciente/médico
+            </summary>
+            <param name="id">ID do paciente/médico que faz uma consulta</param>
+            <returns>Uma lista de consultas com os dados da consulta</returns>
+        </member>
+        <member name="M:senai.sp.medical.group.webApi.Interfaces.IConsultaRepository.Marcar(senai.sp.medical.group.webApi.Domains.Consultum)">
+            <summary>
+            Marca uma nova consulta
+            </summary>
+            <param name="inscricao">Objeto com as informações da consulta</param>
+        </member>
+        <member name="M:senai.sp.medical.group.webApi.Interfaces.IConsultaRepository.AgendadaCancelada(System.Int32,System.String)">
+            <summary>
+            Altera o status de uma consulta
+            </summary>
+            <param name="id">ID da consulta que terá a situação alterada</param>
+            <param name="status">Parâmetro que atualiza a situação da presença para 0 - Cancelada, 1 - Agendada, 2 - </param>
+        </member>
+    </members>
+</doc>
