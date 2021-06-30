@@ -15,6 +15,8 @@ namespace senai.sp.medical.group.webApi.Interfaces
         /// <returns>Uma lista de consultas com os dados da consulta</returns>
         List<Consultum> ListarMinhas(int id);
 
+        List<Consultum> ListarMinhasMedico(int id);
+
         /// <summary>
         /// Marca uma nova consulta
         /// </summary>

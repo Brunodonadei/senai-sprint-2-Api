@@ -67,3 +67,7 @@ C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai
 C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\obj\Debug\net5.0\senai.sp.medical.group.webApi.genruntimeconfig.cache
 C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\bin\Debug\net5.0\senai.sp.medical.group.webApi.xml
 C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\obj\Debug\net5.0\senai.sp.medical.group.webApi.xml
+C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\Pichau\OneDrive\Desktop\senai-sprint-2-Api\API\senai_SP_Med_Group\senai.sp.medical.group.webApi\senai.sp.medical.group.webApi\bin\Debug\net5.0\System.Web.Http.Cors.dll

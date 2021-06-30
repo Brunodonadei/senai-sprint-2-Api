@@ -92,24 +92,49 @@ namespace senai.sp.medical.group.webApi.Repositories
             ctx.SaveChanges();
         }
 
+        public List<Consultum> ListarMinhasMedico(int id)
+        {
+            return ctx.Consulta
+
+                .Include(p => p.IdPacienteNavigation)
+
+                .Include(p => p.IdSituacaoNavigation)
+
+                .Where(p => p.IdMedicoNavigation.IdUsuario == id)
+
+                .ToList();
+
+        }
+
         public List<Consultum> ListarMinhas(int id)
         {
             return ctx.Consulta
 
                 .Include(p => p.IdMedicoNavigation)
 
-                .Include(p => p.IdPacienteNavigation)
-
                 .Include(p => p.IdSituacaoNavigation)
 
-                .Where(p => p.IdConsulta == id)
+                .Include(p => p.IdPacienteNavigation)
+
+                .Include(p => p.IdMedicoNavigation.IdEspecialidadeNavigation)
+
+                .Where(p => p.IdPacienteNavigation.IdUsuario == id)
+             
 
                 .ToList();
         }
 
         public List<Consultum> ListarTodas()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta
+
+                .Include(c => c.IdMedicoNavigation)
+
+                .Include(c => c.IdPacienteNavigation)
+
+                .Include(c => c.IdSituacaoNavigation)
+
+                .ToList();
         }
 
         public void Marcar(Consultum inscricao)

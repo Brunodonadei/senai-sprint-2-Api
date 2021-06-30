@@ -32,7 +32,7 @@ namespace senai.sp.medical.group.webApi.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-L8175GI; initial catalog=Medical_Group; user Id=sa; pwd=Tacrolimusdc360");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-L8175GI; initial catalog=Medical_Group; user Id=sa; pwd=senai@132");
             }
         }
 
@@ -126,7 +126,7 @@ namespace senai.sp.medical.group.webApi.Contexts
                 entity.Property(e => e.IdConsulta).HasColumnName("idConsulta");
 
                 entity.Property(e => e.DataConsulta)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("dataConsulta");
 
                 entity.Property(e => e.Descricao)
@@ -140,6 +140,8 @@ namespace senai.sp.medical.group.webApi.Contexts
                 entity.Property(e => e.IdPaciente).HasColumnName("idPaciente");
 
                 entity.Property(e => e.IdSituacao).HasColumnName("idSituacao");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Consulta)
@@ -155,6 +157,11 @@ namespace senai.sp.medical.group.webApi.Contexts
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdSituacao)
                     .HasConstraintName("FK__consulta__idSitu__46E78A0C");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.Consulta)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__consulta__idUsua__01142BA1");
             });
 
             modelBuilder.Entity<Especialidade>(entity =>

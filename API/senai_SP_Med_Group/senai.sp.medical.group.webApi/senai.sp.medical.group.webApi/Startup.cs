@@ -66,6 +66,8 @@ namespace senai.sp.medical.group.webApi
                     };
                 });
 
+            
+
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sp_medical_group_tarde.webApi", Version = "v1" });
 
@@ -99,6 +101,9 @@ namespace senai.sp.medical.group.webApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

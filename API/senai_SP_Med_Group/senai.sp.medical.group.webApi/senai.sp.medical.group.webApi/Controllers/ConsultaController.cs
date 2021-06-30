@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace senai.sp.medical.group.webApi.Controllers
 {
@@ -37,9 +38,9 @@ namespace senai.sp.medical.group.webApi.Controllers
             }
         }
 
-
+        [Authorize(Roles = "2")]
         [HttpGet("minhas")]
-        public IActionResult ListarMinhas()
+        public IActionResult ListarMinhasPaciente()
         {
             try
             {
@@ -56,6 +57,30 @@ namespace senai.sp.medical.group.webApi.Controllers
                 });
             }
         }
+
+        [Authorize(Roles = "3")]
+        [HttpGet("minhas/medico")]
+        public IActionResult ListarMinhasMedico()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                return Ok(_consultaRepository.ListarMinhasMedico(idUsuario));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "É preciso estar logado para verificar suas consultas.",
+                    ex
+                });
+            }
+        }
+
+
+
+
 
         [Authorize(Roles = "1")]
         [HttpPost]
@@ -129,7 +154,7 @@ namespace senai.sp.medical.group.webApi.Controllers
             }
         }
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "3")]
         [HttpPatch("descricao/{id}")]
         public IActionResult attDescricao(int id, Consultum Descricao)
         {
